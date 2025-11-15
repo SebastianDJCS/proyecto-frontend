@@ -29,7 +29,7 @@ function GameLibrary() {
     }
   };
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <div className="loading">Cargando juegos...</div>;
 
   return (
     <div className="container">
@@ -42,9 +42,9 @@ function GameLibrary() {
             <p>Plataforma: {game.platform}</p>
             <p>Rating: ⭐ {game.rating}/10</p>
             <p>Horas jugadas: {game.hoursPlayed}h</p>
-            <p>Estado: {game.status}</p>
+            <p className={`status ${game.status.toLowerCase()}`}>Estado: {game.status}</p>
             <Link to={`/edit-game/${game._id}`}><button>Editar</button></Link>
-            <button onClick={() => handleDelete(game._id)}>Eliminar</button>
+            <button className="delete-btn" onClick={() => handleDelete(game._id)}>Eliminar</button>
           </div>
         ))}
       </div>
