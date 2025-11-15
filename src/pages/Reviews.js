@@ -80,7 +80,8 @@ function Reviews() {
             onChange={handleChange}
             required
           />
-          <select name="rating" value={newReview.rating} onChange={handleChange}>
+          <label htmlFor="rating">Rating (1-10 estrellas)</label>
+          <select name="rating" id="rating" value={newReview.rating} onChange={handleChange}>
             {[1,2,3,4,5,6,7,8,9,10].map(num => (
               <option key={num} value={num}>{num}</option>
             ))}
