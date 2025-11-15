@@ -10,16 +10,17 @@ function GameForm() {
     title: '',
     genre: '',
     platform: '',
-    rating: 0,
-    hoursPlayed: 0,
-    status: 'pendiente'
+    rating: "",
+    hoursPlayed:"" ,
+    status: 'pendiente',
+    coverImage: ''
   });
 
   useEffect(() => {
     if (id) {
       fetchGame();
     }
-  }, [id]);
+  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchGame = async () => {
     try {
@@ -66,6 +67,7 @@ function GameForm() {
           <option value="jugando">Jugando</option>
           <option value="completado">Completado</option>
         </select>
+        <input type="url" name="coverImage" placeholder="URL de la imagen de portada" value={formData.coverImage} onChange={handleChange} />
         <button type="submit">Guardar</button>
       </form>
     </div>

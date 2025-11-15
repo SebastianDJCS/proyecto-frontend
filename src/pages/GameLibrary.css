@@ -78,6 +78,32 @@
   color: white;
 }
 
+.game-cover-thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.game-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.game-actions button {
+  flex: 1;
+  min-width: 80px;
+  margin: 0;
+}
+
+.reviews-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+}
+
 .game-card button {
   margin-right: 8px;
   margin-top: 15px;

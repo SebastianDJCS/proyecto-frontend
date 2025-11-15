@@ -37,14 +37,18 @@ function GameLibrary() {
       <div className="games-grid">
         {games.map(game => (
           <div key={game._id} className="game-card">
+            {game.coverImage && <img src={game.coverImage} alt={game.title} className="game-cover-thumb" />}
             <h3>{game.title}</h3>
             <p>Género: {game.genre}</p>
             <p>Plataforma: {game.platform}</p>
             <p>Rating: ⭐ {game.rating}/10</p>
             <p>Horas jugadas: {game.hoursPlayed}h</p>
             <p className={`status ${game.status.toLowerCase()}`}>Estado: {game.status}</p>
-            <Link to={`/edit-game/${game._id}`}><button>Editar</button></Link>
-            <button className="delete-btn" onClick={() => handleDelete(game._id)}>Eliminar</button>
+            <div className="game-actions">
+              <Link to={`/edit-game/${game._id}`}><button>Editar</button></Link>
+              <Link to={`/game/${game._id}/reviews`}><button className="reviews-btn">Reseñas</button></Link>
+              <button className="delete-btn" onClick={() => handleDelete(game._id)}>Eliminar</button>
+            </div>
           </div>
         ))}
       </div>
