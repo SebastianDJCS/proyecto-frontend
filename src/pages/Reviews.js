@@ -98,6 +98,7 @@ function Reviews() {
           reviews.map(review => (
             <div key={review._id} className="review-card">
               <h4>{review.title}</h4>
+              <p><strong>Usuario:</strong> {review.userId?.username || 'Anónimo'}</p>
               <p>{review.content}</p>
               <p>Rating: ⭐ {review.rating}/10</p>
               <small>{new Date(review.createdAt).toLocaleDateString()}</small>

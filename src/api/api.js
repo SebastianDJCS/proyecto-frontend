@@ -29,6 +29,7 @@ export const deleteGame = (id) => api.delete(`/games/${id}`);
 
 // Reviews API
 export const getReviews = (gameId) => api.get(`/reviews/${gameId}`);
+export const getAllReviews = () => api.get('/reviews');
 export const createReview = (data) => api.post('/reviews', data);
 export const updateReview = (id, data) => api.put(`/reviews/${id}`, data);
 export const deleteReview = (id) => api.delete(`/reviews/${id}`);
